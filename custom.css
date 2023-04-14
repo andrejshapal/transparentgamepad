@@ -1,0 +1,216 @@
+/*BEGIN PS3 Controller Styling*/
+/*This class defines the base attributes of the skin*/
+.controller.custom{
+  /* The background image is basically the base for the controller's skin. The 
+  PS3 controller's skin can be found at http://mrmcpowned.com/gamepad/ps3-assets/base.png
+  and you can observe it as an example. The sticks, buttons, and directional arrows are missing
+  because their appropriate elements will be incorperated when their styling is defined below.
+  The entirity of the skin's visual styling is done via background images and CSS sprites. */ 
+  background: url(ps3-assets/base.png); 
+  height: 483px;
+  width: 785px;
+}
+.custom.disconnected { /* This class shows an image when the controller is disconnected */
+  background: url(ps3-assets/base.png);
+}
+/* This hides the controller's button when disconnected so only the background image remains */ 
+.custom.disconnected div {
+  display: none;
+}
+.custom .triggers{ /* The triggers are housed inside a div, so this sizes the div properly and positions it */
+  width: 757px;
+  height: 59px;
+  position: absolute;
+  left: 14px;
+}
+.custom .trigger{/* These are the actual triggers themselves */
+  width:54px;
+  height:46px;
+  background: url(ps3-assets/triggers.png);
+  opacity: 0;
+}
+/* The left and right classes below are used to position the triggers
+within the div they're contained in. Since their positions is realtive
+to the size of the parent element, we simply resize the parent element 
+above to achieve the desired position. */
+.custom .trigger.left{ 
+  float: left;
+}
+.custom .trigger.right{
+  float: right;
+}
+
+/* The bumpers follow the same methodology as the triggers in terms of
+placement */
+.custom .bumper{
+  width: 89px;
+  height: 28px;
+  background: url(ps3-assets/triggers.png);
+  opacity: 0;
+}
+.custom .bumpers{
+  width: 757px;
+  height: 59px;
+  position: absolute;
+  left: 14px;
+}
+.custom .bumper.pressed{ /* The '.pressed' class is used for most buttons to signify they've been pressed */
+  opacity: 1;
+}
+.custom .bumper.left{
+/* Call me lazy or smart, but why should I make 2 bumpers when they're symmetrical
+and I can just rotate them in the browser? Also, note that you most likely won't need
+to use a browser speficic prefix unless it's something that is indeed browser specific.
+NOTE: CLR Browser is basically chrome, so you use '-webkit-' as the browser prefix. */
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  float: left;
+}
+.custom .bumper.right{
+  float: right;
+}
+
+/* This is to size and position the containing div for the 
+start and select buttons. */
+.custom .arrows{
+  position: absolute;
+  width: 205px;
+  height: 19px;
+  top: 250px;
+  left: 291px;
+}
+/* Setting the size and CSS sprite for the start adn select buttons */
+.custom .back, .custom .start{
+  background: url(ps3-assets/menus.png);
+  width: 173px;
+  height: 27px;
+}
+.custom .back.pressed{
+  background-position-y: -30px;
+}
+
+.custom .start.pressed{
+  background-position-y: -30px;
+}
+
+.custom .back{
+  float: left;
+  width: 41px;
+}
+.custom .start{
+  float: right;
+  width: 46px;
+  background-position: 43px 0;
+}
+/* Positioning and size of the container for the face buttons */
+.custom .abxy{
+  position: absolute;
+  width: 163px;
+  height: 163px;
+  top: 93px;
+  left: 526px;
+}
+/* base class used to simplify the sprite mapping */
+.custom .button{
+  position: absolute;
+  width:50px;
+  height:49px;
+  background: url(ps3-assets/face-buttons.png);
+}
+.custom .button.pressed{
+  background-position-y: -52px;
+  margin-top: 5px;
+}
+.custom .a{
+  background-position: 52px 0;
+  top: 114px;
+  left: 57px;
+}
+.custom .b{
+  background-position: 104px 0;
+  top: 57px;
+  right: 0px;
+}
+.custom .x{
+  background-position: 0 0;
+  top: 57px;
+}
+.custom .y{
+  background-position: -52px 0;
+  left: 57px;
+}
+/* Analog sticks follow the same principles as the triggers in terms of positioning
+Note that the rotation of the sticks in hard coded with javascript, so it applies 
+the CSS inline. */
+.custom .sticks{
+  position: absolute;
+  width: 325px;
+  height: 112px;
+  top: 241px;
+  left: 230px;
+}
+.custom .stick{
+  position: absolute;
+  background: url(ps3-assets/thumbs.png);
+  height:112px;
+  width: 112px;
+}
+.custom .stick.pressed.left{
+  background-position-x: -114px;
+}
+.custom .stick.pressed.right{
+  background-position-x: -228px;
+}
+.custom .stick.left{
+  top: 0;
+  left: 0;
+}
+.custom .stick.right{
+  top: calc(100% - 105px);
+  left: calc(100% - 105px);
+}
+/* Dpad possitioning and sizing */
+.custom .dpad{
+  position: absolute;
+  width: 120px;
+  height: 119px;
+  top: 115px;
+  left: 117px;
+}
+.custom .face{
+  background: url(ps3-assets/dpad.png);
+  position: absolute;
+}
+.custom .face.up, .custom .face.down{
+  width: 40px;
+  height: 49px;
+}
+.custom .face.left, .custom .face.right{
+  width: 48px;
+  height: 41px;
+}
+.custom .face.up{
+  left: 40px;
+  top: 0;
+  background-position: 92px 0px;
+}
+.custom .face.down{
+  left: 40px;
+  top: 71px;
+  background-position: 50px 0;
+}
+.custom .face.left{
+  top: 40px;
+  left: 0;
+  background-position: 0px 0;
+}
+.custom .face.right{
+  top: 40px;
+  right: 0px;
+  background-position: 134px 0;
+}
+.custom .face.pressed{
+  margin-top: 5px;
+  background-position-y: 51px;
+}
+/*END PS3 Controller Styling*/
