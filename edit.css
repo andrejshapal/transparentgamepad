@@ -11,3 +11,28 @@
     height: 558px;
     width: 784px;
 }
+
+.button.edit {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    background: url(ps3-assets/face-buttons.png);
+}
+
+.face.edit {
+    background: url(ps3-assets/dpad.png);
+    position: absolute;
+}
+
+.stick.edit {
+    position: absolute;
+    background: url(ps3-assets/thumbs.png);
+    height: 105px;
+    width: 105px;
+}
+
+.back.edit, .start.edit {
+    background: url(ps3-assets/menus.png);
+    width: 34px;
+    height: 19px;
+}
