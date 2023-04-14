@@ -31,6 +31,12 @@
     width: 105px;
 }
 
+.edit .back, .edit .start {
+    background: url(ps3-assets/menus.png);
+    width: 34px;
+    height: 19px;
+}
+
 .edit .start {
     float: right;
     width: 36px;
@@ -40,10 +46,4 @@
 .edit .back {
     float: left;
     width: 38px;
-}
-
-.edit .back, .edit .start {
-    background: url(ps3-assets/menus.png);
-    width: 34px;
-    height: 19px;
 }
